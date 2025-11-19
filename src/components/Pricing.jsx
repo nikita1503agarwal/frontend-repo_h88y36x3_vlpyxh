@@ -1,4 +1,5 @@
 import React from 'react'
+import { MotionSection, MotionCard } from './MotionSection'
 
 const tiers = [
   {
@@ -23,12 +24,12 @@ const tiers = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="bg-slate-950 py-20">
+    <MotionSection id="pricing" className="bg-slate-950 py-20">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-white mb-10">Pricing</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {tiers.map((t) => (
-            <div key={t.name} className="bg-slate-900/70 border border-white/10 rounded-2xl p-6 flex flex-col">
+          {tiers.map((t, i) => (
+            <MotionCard key={t.name} className="bg-slate-900/70 border border-white/10 rounded-2xl p-6 flex flex-col" delay={i * 0.05}>
               <h3 className="text-xl font-semibold text-white">{t.name}</h3>
               <p className="mt-2 text-3xl font-bold text-white">{t.price}</p>
               <p className="mt-2 text-slate-300">{t.desc}</p>
@@ -38,10 +39,10 @@ export default function Pricing() {
                 ))}
               </ul>
               <a href="#contact" className="mt-6 inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg">Get started</a>
-            </div>
+            </MotionCard>
           ))}
         </div>
       </div>
-    </section>
+    </MotionSection>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { MotionSection, MotionCard } from './MotionSection'
 
 const testimonials = [
   { name: 'Ayesha K.', role: 'Ecommerce Founder', quote: 'We finally trust our numbers. After the tracking overhaul, our MER hit 3.2 and scaling became predictable.' },
@@ -8,18 +9,18 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-slate-950 py-20">
+    <MotionSection id="testimonials" className="bg-slate-950 py-20">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-white mb-10">What clients say</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <div key={t.name} className="bg-slate-900/70 border border-white/10 rounded-2xl p-6">
+          {testimonials.map((t, i) => (
+            <MotionCard key={t.name} className="bg-slate-900/70 border border-white/10 rounded-2xl p-6" delay={i * 0.05}>
               <p className="text-slate-200">“{t.quote}”</p>
               <p className="mt-4 text-sm text-slate-400">{t.name} — {t.role}</p>
-            </div>
+            </MotionCard>
           ))}
         </div>
       </div>
-    </section>
+    </MotionSection>
   )
 }

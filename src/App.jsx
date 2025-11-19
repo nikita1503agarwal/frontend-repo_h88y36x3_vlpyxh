@@ -9,6 +9,7 @@ import TechStack from './components/TechStack'
 import Pricing from './components/Pricing'
 import About from './components/About'
 import Contact from './components/Contact'
+import ScrollTop from './components/ScrollTop'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <a href="#contact" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg">Book a Call</a>
         </div>
       </footer>
+      <ScrollTop />
     </div>
   )
 }

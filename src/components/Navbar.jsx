@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const NavLink = ({ href, children }) => (
   <a href={href} className="text-slate-300 hover:text-white transition-colors">
@@ -12,7 +13,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#home" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 shadow-lg" />
+            <motion.div
+              className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 shadow-lg"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            />
             <div>
               <p className="text-white font-semibold leading-tight">Muhammad Abdul Rahman</p>
               <p className="text-xs text-slate-400 leading-tight">Performance Marketing & Tracking</p>

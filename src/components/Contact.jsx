@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { MotionSection, MotionCard } from './MotionSection'
 
 export default function Contact() {
   const [name, setName] = useState('')
@@ -25,9 +26,9 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-slate-950 py-20">
+    <MotionSection id="contact" className="bg-slate-950 py-20">
       <div className="max-w-3xl mx-auto px-6">
-        <div className="bg-slate-900/70 border border-white/10 rounded-2xl p-6">
+        <MotionCard className="bg-slate-900/70 border border-white/10 rounded-2xl p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-3xl font-bold text-white">Book a Call</h2>
             <p className="text-slate-400 text-sm">Or email: hello@example.com</p>
@@ -41,8 +42,8 @@ export default function Contact() {
           {status && (
             <p className={`mt-4 text-sm ${status.ok ? 'text-emerald-400' : 'text-red-400'}`}>{status.msg}</p>
           )}
-        </div>
+        </MotionCard>
       </div>
-    </section>
+    </MotionSection>
   )
 }
